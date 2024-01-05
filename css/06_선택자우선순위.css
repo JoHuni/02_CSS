@@ -1,0 +1,27 @@
+/* 1순위 !important */
+.cls1{
+    background-color: blueviolet !important;
+}
+
+/* <!-- 2순위 : inline-style -->
+<div class="cls1" id="test1" style="background-color: crimson;">우선 순위 테스트</div> */
+
+/* 3순위 : id 선택 */
+#test1{
+    color: white; /* 안 겹치면 후순위들도 다 적용 */
+    width: 100px; /* 겹치면 우선순위 것을 적용 */
+}
+
+/* 4순위 : 클래스 선택*/
+.cls1{
+    background-color: green;
+}
+
+
+/* 5순위 : 태그 선택*/
+div{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+

@@ -1,0 +1,54 @@
+/* only-child는 유일한 자식인 (n)만 존재하면 적용됨 */
+#test1>p:only-child{
+    background-color: orange;
+}
+
+/* 얘는 pre도 자식이 있어서 적용이 안됨 */
+#test2 > p:only-child{
+    background-color: green;
+}
+
+/* 자식의 p태그를 모두 선택 */
+#test3 > p:only-of-type{
+    background-color: green;
+}
+
+#test3 > pre:only-of-type{
+    background-color: aquamarine;
+}
+
+#test4 > p:empty{
+    height: 30px;
+    background-color: lime;
+}
+
+/* 여러 요소 동시 선택 */
+#test5-1, .test5-2, [name = "test5-3"]{
+    font-weight: bold;
+    font-size: 30px;
+    font-family: '궁서체';
+    border-bottom: 3px solid black;
+}
+
+.test6{
+    background-color: yellow;
+}
+
+.aaa{
+    font-size: 30px;
+}
+
+/* class 속성 값으로 test6, aaa 둘 다 가지고 있는 요소만 선택 */
+/* 띄어쓰기 하면 후손 선택자가 됨 조싱하셈 */
+.test6.aaa{
+    font-family: '궁서체';
+    color: mediumaquamarine;
+}
+
+.test6 .aaa{
+    color: red;
+}
+
+.test-6aaa{
+    background-color: blueviolet;
+}
